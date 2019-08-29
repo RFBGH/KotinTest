@@ -1,5 +1,7 @@
 package com.flypig.test
 
+import java.util.concurrent.ConcurrentHashMap
+
 fun vars(vararg v : Int){
     for(vt in v){
         println(vt)
@@ -222,4 +224,25 @@ fun main (args:Array<String>){
     })
 
     SingleInstance.instance.test()
+
+    val map : Map<String, String> = ConcurrentHashMap();
+
+    val pair : Pair<String, String> = Pair("111", "2222");
+    map.plus(pair)
+    map.plus(Pair ("a", "b"))
+    map.minus("a")
+
+    val testList : List<String> = listOf("1", "2", "3")
+
+    var findStr : String? = null;
+
+    testList.forEach {
+        it -> if (it.equals("1")){
+            findStr = it;
+             return@forEach
+        }
+    }
+
+    println("findStr $findStr")
+
 }
