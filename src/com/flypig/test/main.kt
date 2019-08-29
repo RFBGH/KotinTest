@@ -164,6 +164,7 @@ fun main (args:Array<String>){
     println(s)
 
     var s1 = "s1 value is s replace 2 : ${a.toString().replace("1", "2")}"
+
     println(s1)
 
     var age : String? = null;
@@ -244,5 +245,27 @@ fun main (args:Array<String>){
     }
 
     println("findStr $findStr")
+
+    val zzz = 1;
+    println(zzz.takeIf { it == 2 })
+
+    val intList : List<Int> = arrayListOf(1,2,3,4,5,6)
+    val list1 = intList.take(2)
+    list1.forEach {
+        print(it.toString()+" ")
+    }
+    println()
+
+    val list2 = intList.takeWhile {
+        it < 4
+    }
+    list2.forEach {
+        print(it.toString()+" ")
+    }
+    println()
+
+
+
+
 
 }
