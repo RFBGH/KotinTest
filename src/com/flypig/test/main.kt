@@ -148,7 +148,44 @@ class SingleInstance{
     }
 }
 
+interface ITest{
+    fun test()
+}
+
+class TestA : ITest{
+    override fun test() {
+        println("testA")
+    }
+}
+
+class TestB : ITest{
+    override fun test() {
+        println("testB")
+    }
+}
+
 fun main (args:Array<String>){
+
+    val testMap:HashMap<Class<out ITest>, String> = HashMap()
+
+    val testA = TestA()
+    val testB = TestB()
+
+    testMap[testA.javaClass] = "111"
+    testMap[testB.javaClass] = "222"
+
+    println(testMap[testA.javaClass])
+    println(testMap[testB.javaClass])
+
+
+    val myList:List<String> = ArrayList<String>()
+
+    for(i in 0..myList.size){
+        println(i)
+    }
+
+    val xx = 111
+    println("\$xx=$xx")
 
     labam({i->i}, {i->"xx"+i}, {i -> i})
 
