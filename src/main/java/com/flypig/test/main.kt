@@ -174,10 +174,25 @@ fun getObject():String?{
     return "1"
 }
 
+class AAA{
+
+    init {
+        println("AAA init")
+    }
+
+    fun test(){
+        println("aaaaa")
+    }
+
+}
 
 fun main (args:Array<String>){
 
+    fun TestA.test111() = AAA()
 
+    val testA = TestA()
+
+    testA.test111()
 
 //    val time = measureTimeMillis(fun(){
 //
